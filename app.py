@@ -8,7 +8,11 @@ def questions() -> int:
     number = random.randrange(1, 1001)
     print("What number did I make up?")
     while True:
-        answer = int(input())
+        try:
+            answer = int(input())
+        except ValueError:
+            print('\033[31m' + "Oops! Than was not a number. Please enter number!" + '\033[39m')
+            continue
 
         if (answer == number):
             print('\033[33m' + f'Right! I made a wish for the number {number}')
