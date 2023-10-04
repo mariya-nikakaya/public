@@ -30,3 +30,7 @@ def questions() -> int:
             print('My number' + '\033[31m' + ' greather ' + '\033[39m' + f'then {answer}')
             continue
     return 0
+
+
+def goodbye(name: str) -> int:
+    print(f'Goodbye {name}!')
