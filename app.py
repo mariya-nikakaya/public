@@ -1,7 +1,7 @@
 import random
 
 def hello(name: str) -> int:
-    print(f'Hello {name}!')
+    print(f'\n\nHello {name}!\n')
     return 0
 
 def questions() -> int:
