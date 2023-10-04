@@ -6,6 +6,7 @@ def hello(name: str) -> int:
 
 def questions() -> int:
     number = random.randrange(1, 1001)
+    counter = 0
     print("What number did I make up?")
     while True:
         try:
@@ -14,8 +15,11 @@ def questions() -> int:
             print('\033[31m' + "Oops! Than was not a number. Please enter number!" + '\033[39m')
             continue
 
+        counter = counter + 1
+
         if (answer == number):
-            print('\033[33m' + f'Right! I made a wish for the number {number}')
+            print('\033[33m' + f'\n\nRight! I made a wish for the number {number}\n')
+            print(f'You were able to guess the number in {counter} attempts\n\n' + '\033[39m')
             break
 
         if (answer > number):
