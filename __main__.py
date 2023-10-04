@@ -1,15 +1,20 @@
-import sys
-import getpass
+from sys import exit
+from enquiries import choose
 
-import app
+from guess_number import guess_number
+
 
 def main() -> int:
     """Run application"""
-    app.hello(getpass.getuser())
-    app.questions()
-    app.goodbye(getpass.getuser())
-    return 0
+    options = ['Guess Number', 'Exit']
+    choice = choose('Choose one of these options: ', options)
+
+    match choice:
+        case "Guess Number":
+            guess_number()
+        case _:
+            return 0
+
 
 if __name__ == '__main__':
-    sys.exit(main())
-
+    exit(main())

@@ -1,8 +1,13 @@
+import getpass
 import random
 
 
-def hello(name: str) -> int:
-    print(f'\n\nHello {name}!\n')
+def greeting(name: str, operation: int) -> int:
+    match operation:
+        case 1:
+            print(f'\n\nHello {name}!\n')
+        case 0:
+            print(f'Goodbye {name}!')
     return 0
 
 
@@ -12,7 +17,8 @@ def rules():
     print('For help, press "h".\n\n')
 
 
-def questions() -> int:
+def guess_number() -> int:
+    greeting(getpass.getuser(), 1)
     rules()
     number = random.randrange(1, 1001)
     counter = 0
@@ -42,6 +48,7 @@ def questions() -> int:
                   f'\n\nRight! I made a wish for the number {number}\n')
             print(
                 f'You were able to guess the number in {counter} attempts\n\n' + '\033[39m' + '\n\n')
+            greeting(getpass.getuser(), 0)
             break
 
         if (answer > number):
@@ -54,7 +61,3 @@ def questions() -> int:
                   ' greather ' + '\033[39m' + f'then {answer}')
             continue
     return 0
-
-
-def goodbye(name: str) -> int:
-    print(f'Goodbye {name}!')
