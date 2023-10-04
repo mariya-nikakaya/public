@@ -6,6 +6,7 @@ import app
 def main() -> int:
     """Run application"""
     app.hello(getpass.getuser())
+    app.goodbye(getpass.getuser())
     return 0
 
 if __name__ == '__main__':
