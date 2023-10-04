@@ -9,7 +9,7 @@ def hello(name: str) -> int:
 def rules():
     print('You need to guess a number from 1 to 1000\n')
     print('To exit, press "q".\n')
-    print('For reference, press "h".\n\n')
+    print('For help, press "h".\n\n')
 
 
 def questions() -> int:
